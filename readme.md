@@ -42,4 +42,11 @@ export default defineConfig({
 
 ### Change brand color at runtime
 
-TODO
+```ts
+import { changeBrand } from '@0x-jerry/unocss-preset-brand/runtime'
+
+changeBrand({
+  primary: 'rose',
+  gray: 'zinc'
+})
+```
