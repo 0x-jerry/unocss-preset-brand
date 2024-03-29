@@ -1,5 +1,5 @@
 import { mapValues, pickBy, capitalize, kebabCase, mapKeys } from 'lodash-es'
-import { type Preflight, definePreset, entriesToCss } from 'unocss'
+import { type Preflight, definePreset, entriesToCss, type PresetFactory } from 'unocss'
 import type { Theme } from 'unocss/preset-mini'
 
 export interface PresetBrandOption {
@@ -23,7 +23,8 @@ const defaultBrandColors = {
   gray: 'gray',
 }
 
-export const presetBrand = definePreset<PresetBrandOption>((options: PresetBrandOption = {}) => {
+
+export const presetBrand: PresetFactory<Theme, PresetBrandOption> = definePreset((options = {}) => {
   const varPrefix = 'brand'
 
   const { brand: brandColors = defaultBrandColors, prefix = 'b' } = options
