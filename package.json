@@ -4,6 +4,14 @@
   "description": "",
   "main": "src/index.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./runtime": {
+      "default": "./src/runtime.ts"
+    }
+  },
   "engines": {
     "node": ">= 18"
   },
@@ -22,7 +30,15 @@
     "access": "public",
     "registry": "https://registry.npmjs.org",
     "main": "dist/index.js",
-    "typings": "dist/index.d.ts"
+    "typings": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "default": "./dist/index.js"
+      },
+      "./runtime": {
+        "default": "./dist/runtime.js"
+      }
+    }
   },
   "files": [
     "dist"

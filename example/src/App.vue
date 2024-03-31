@@ -1,45 +1,62 @@
 <script setup lang="ts">
-import {reactive} from 'vue'
-
-import VSelect from './VSelect.vue';
+import { ref, watch } from 'vue'
+import { changeBrand } from '@0x-jerry/unocss-preset-brand/runtime'
+import VSelect from './VSelect.vue'
 
 const primaryColorOptions = [
-  'Red',
-  'Orange',
-  'Amber',
-  'Yellow',
-  'Lime',
-  'Green',
-  'Emerald',
-  'Teal',
-  'Cyan',
-  'Sky',
-  'Blue',
-  'Indigo',
-  'Violet',
-  'Purple',
-  'Fuchsia',
-  'Pink',
-  'Rose',
+  'red',
+  'orange',
+  'amber',
+  'yellow',
+  'lime',
+  'green',
+  'emerald',
+  'teal',
+  'cyan',
+  'sky',
+  'blue',
+  'indigo',
+  'violet',
+  'purple',
+  'fuchsia',
+  'pink',
+  'rose',
 ]
 
-const grayColorOptions = ['Slate', 'Gray', 'Zinc', 'Neutral', 'Stone']
+const grayColorOptions = [
+  //
+  'slate',
+  'gray',
+  'zinc',
+  'neutral',
+  'stone',
+]
 
-const state = reactive({
+const state = ref({
   primary: '',
-  gray: ''
+  gray: '',
 })
+
+watch(
+  state,
+  () => {
+    changeBrand(state.value)
+  },
+  {
+    deep: true,
+  }
+)
 </script>
 
 <template>
   <div class="flex flex-col gap-2">
     <div class="flex gap-2">
-      <span class="w-10em text-right"> Change Primary Color </span>
+      <span class="label text-right"> Change Primary Color </span>
       <VSelect v-model="state.primary" :options="primaryColorOptions"></VSelect>
       <VSelect v-model="state.gray" :options="grayColorOptions"></VSelect>
     </div>
     <div class="flex flex-wrap gap-2 items-center">
-      <span class="w-10em text-right"> Primary Color </span>
+      <span class="label text-right"> Primary Color </span>
       <span class="block bg-b-primary-1"> </span>
       <span class="block bg-b-primary-2"> </span>
       <span class="block bg-b-primary-3"> </span>
@@ -51,7 +68,7 @@ const state = reactive({
       <span class="block bg-b-primary-9"> </span>
     </div>
     <div class="flex flex-wrap gap-2 items-center">
-      <span class="w-10em text-right"> Gray Color </span>
+      <span class="label text-right"> Gray Color </span>
       <span class="block bg-b-gray-1"> </span>
       <span class="block bg-b-gray-2"> </span>
       <span class="block bg-b-gray-3"> </span>
@@ -66,9 +83,13 @@ const state = reactive({
 </template>
 
 <style scoped>
+.label {
+  width: 10em;
+}
+
 .block {
-  width: 1em;
-  height: 1em;
+  width: 4em;
+  height: 4em;
   display: inline-block;
 }
 </style>
