@@ -26,7 +26,7 @@ function generateVariables(brandName: string, refColorName?: string,): string {
   return variables.join('')
 }
 
-export function genearteBrandCss(brand: Record<string, string>) {
+export function generateBrandCss(brand: Record<string, string>) {
   const css = Object.entries(brand)
     .map(([brandName, refColorName]) => generateVariables(brandName, refColorName))
     .join('\n')
@@ -35,7 +35,7 @@ export function genearteBrandCss(brand: Record<string, string>) {
 }
 
 export function changeBrand(brand: Record<string, string>) {
-  const css = genearteBrandCss(brand)
+  const css = generateBrandCss(brand)
 
   getStyleElement().innerText = `:root { ${css} }`
 }
