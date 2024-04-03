@@ -15,6 +15,8 @@ export default defineConfig({
     presetUno(),
     presetBrand({
       brand: {
+        // You can use any color that is defined in other presets, here is `presetUno`,
+        // which uses the same colors as `tailwind`, reference: https://tailwindcss.com/docs/customizing-colors
         primary: 'teal',
         gray: 'gray'
       }
