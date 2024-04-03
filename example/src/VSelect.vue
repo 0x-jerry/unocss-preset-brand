@@ -2,13 +2,16 @@
 defineProps<{
   options: string[]
 }>()
-const value = defineModel<string>('')
+
+const value = defineModel<string>()
 </script>
 
 <template>
-  <select v-model="value">
-    <option v-for="o in options" :value="o">{{ o }}</option>
-  </select>
+  <div class="flex-1 flex flex-wrap gap-1">
+    <button v-for="opt in options" @click="value = opt">
+      {{ opt }}
+    </button>
+  </div>
 </template>
 
 <style lang="less" scoped></style>

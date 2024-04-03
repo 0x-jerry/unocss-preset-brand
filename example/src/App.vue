@@ -49,12 +49,27 @@ watch(
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div>
+    <a href="https://github.com/0x-jerry/unocss-preset-brand">
+      <h1 class="text-b-primary text-opacity-80">
+        UnoCSS Preset Brand
+
+        <small class="text-3xl text-b-primary-6">
+          <i class="icon i-bxl:github"></i>
+        </small>
+      </h1>
+    </a>
+  </div>
+  <div class="flex flex-col gap-2 w-900px">
     <div class="flex gap-2">
-      <span class="label text-right"> Change Primary Color </span>
+      <span class="label text-right"> Change Primary </span>
       <VSelect v-model="state.primary" :options="primaryColorOptions"></VSelect>
+    </div>
+    <div class="flex gap-2">
+      <span class="label text-right"> Change Gray</span>
       <VSelect v-model="state.gray" :options="grayColorOptions"></VSelect>
     </div>
+    <hr>
     <div class="flex flex-wrap gap-2 items-center">
       <span class="label text-right"> Primary Color </span>
       <span class="block bg-b-primary-1"> </span>
@@ -85,11 +100,18 @@ watch(
 <style scoped>
 .label {
   width: 10em;
+  @apply text-bGray-6;
 }
 
 .block {
   width: 4em;
   height: 4em;
   display: inline-block;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-flex;
 }
 </style>

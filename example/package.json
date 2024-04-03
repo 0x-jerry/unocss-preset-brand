@@ -12,11 +12,12 @@
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@0x-jerry/unocss-preset-brand": "workspace:*",
+    "@iconify-json/bxl": "^1.1.10",
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
     "unocss": "^0.58.8",
     "vite": "^5.2.0",
-    "vue-tsc": "^2.0.6",
-    "@0x-jerry/unocss-preset-brand": "workspace:*"
+    "vue-tsc": "^2.0.6"
   }
 }
