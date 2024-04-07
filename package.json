@@ -60,6 +60,6 @@
   "dependencies": {
     "@0x-jerry/utils": "^2.1.1",
     "lodash-es": "^4.17.21",
-    "unocss": "^0.58.8"
+    "unocss": "^0.59.0"
   }
 }
