@@ -1,6 +1,5 @@
 import { mapValues, pickBy, capitalize, kebabCase, mapKeys } from 'lodash-es'
-import { type Preflight, definePreset, entriesToCss, type PresetFactory } from 'unocss'
-import type { Theme } from 'unocss/preset-mini'
+import { type Preflight, definePreset, entriesToCss, type PresetFactory } from '@unocss/core'
 
 export interface PresetBrandOption {
   /**
@@ -24,7 +23,7 @@ const defaultBrandColors = {
 }
 
 
-export const presetBrand: PresetFactory<Theme, PresetBrandOption> = definePreset((options = {}) => {
+const _presetBrand: PresetFactory<object, PresetBrandOption> = definePreset((options = {}) => {
   const varPrefix = 'brand'
 
   const { brand: brandColors = defaultBrandColors, prefix = 'b' } = options
@@ -36,7 +35,7 @@ export const presetBrand: PresetFactory<Theme, PresetBrandOption> = definePreset
     (_, key) => colorName(key),
   )
 
-  const preflights: Preflight<Theme>[] = [
+  const preflights: Preflight<any>[] = [
     {
       layer: 'preflights',
       getCSS(ctx) {
@@ -45,7 +44,7 @@ export const presetBrand: PresetFactory<Theme, PresetBrandOption> = definePreset
           (v, key) => typeof v === 'object' && !Object.keys(colors).includes(key),
         )
 
-        const preflight = generateColorVariables(_colors as any)
+        const preflight = generateColorVariables(_colors)
 
         const brandVariables = generateBrandVariables(brandColors, varPrefix)
 
@@ -65,6 +64,8 @@ export const presetBrand: PresetFactory<Theme, PresetBrandOption> = definePreset
     preflights,
   }
 })
+
+export const presetBrand = _presetBrand as any
 
 function generateColorVariables(colors: Record<string, Record<string, string>>) {
   const variables: Record<string, string> = {}

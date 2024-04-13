@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@0x-jerry/utils": "^2.1.2",
-    "lodash-es": "^4.17.21",
-    "unocss": "^0.59.2"
+    "@unocss/core": "^0.59.2",
+    "lodash-es": "^4.17.21"
   }
 }
