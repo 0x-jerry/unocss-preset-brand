@@ -65,7 +65,7 @@ const _presetBrand: PresetFactory<object, PresetBrandOption> = definePreset((opt
   }
 })
 
-export const presetBrand = _presetBrand as any
+export const presetBrand = _presetBrand
 
 function generateColorVariables(colors: Record<string, Record<string, string>>) {
   const variables: Record<string, string> = {}
