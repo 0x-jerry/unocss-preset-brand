@@ -7,12 +7,12 @@
   "typings": "dist/index.d.ts",
   "exports": {
     ".": {
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./runtime": {
-      "default": "./dist/runtime.js",
-      "types": "./dist/runtime.d.ts"
+      "types": "./dist/runtime.d.ts",
+      "default": "./dist/runtime.js"
     }
   },
   "publishConfig": {
@@ -52,16 +52,16 @@
   "devDependencies": {
     "@0x-jerry/x-release": "^2.2.2",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.12.12",
-    "@vitest/coverage-v8": "^1.6.0",
-    "tsup": "^8.0.2",
-    "tsx": "^4.11.0",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "@types/node": "^22.13.8",
+    "@vitest/coverage-v8": "^3.0.7",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
   },
   "dependencies": {
-    "@0x-jerry/utils": "^2.2.7",
-    "@unocss/core": "^0.60.3",
+    "@0x-jerry/utils": "^4.2.2",
+    "@unocss/core": "66.1.0-beta.3",
     "lodash-es": "^4.17.21"
   }
 }
