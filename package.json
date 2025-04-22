@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@0x-jerry/utils": "^5.0.0",
-    "@unocss/core": "66.1.0-beta.12",
+    "@unocss/core": "^66.0.0",
     "lodash-es": "^4.17.21"
   }
 }
