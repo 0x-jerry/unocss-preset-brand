@@ -14,7 +14,7 @@
   "devDependencies": {
     "@0x-jerry/unocss-preset-brand": "workspace:*",
     "@iconify-json/bxl": "^1.2.2",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue": "^6.0.0",
     "typescript": "^5.8.2",
     "unocss": "66.1.0-beta.12",
     "vite": "^6.2.0",
